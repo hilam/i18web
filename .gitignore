@@ -1,0 +1,11 @@
+# Editors and IDEs
+.vscode/
+.idea/
+# asdf, pyenv
+.tool-versions
+# bytecode, cache
+*.pyc
+.pytest_cache
+# coverage
+.coverage
+coverage.xml
