@@ -5,23 +5,23 @@ Esteira de tradução de conteúdos de links (artigos, páginas).
 [![Python Version][python-image]][python-url]
 [![FastAPI Version][fastapi-image]][fastapi-url]
 
-## Intro
+## Introdução
 
-Projeto para viabilizar uma esteira de tradução de conteúdos de links (artigos, páginas). Os links são incluídos por usuários, cadastrados ou não, que votam nos mesmos, para indicação de prioridade para os tradutores. Se o usuário for cadastrado, pode acompanhar a tradução de suas indicações ou daquelas em que votou. Usando o Transifex como ferramenta de tradução, o conteúdo dos links são baixados e incluídos na plataforma. Lá são traduzidos e revisados. Eventualmente, os textos concluídos são carregados para um site estático, que disponibiliza o conteúdo dos links indicados e atualiza no aplicativo de indicação o estado e a URL do conteúdo já traduzido.
+Projeto para viabilizar uma esteira de tradução de conteúdos de links (artigos, páginas, blog posts, etc). Num aplicativo web, os links são indicados por usuários, anônimos ou registrados, que votam nos links para indicar prioridades para os tradutores. O usuário registrado pode acompanhar a tradução de suas indicações ou daquelas em que votou. O conteúdo dos links indicados e priorizados são baixados e incluídos na plataforma de tradução, onde são traduzidos e revisados. Os textos traduzidos são carregados para o aplicativo web, que disponibiliza o conteúdo traduzido, e atualiza os links indicados incluindo o endereço do conteúdo traduzido.
 
 ## Arquitetura
 
 ### Repositório de dados e API de acesso (API)
 
-Acesso aos dados do banco PostgreSQL, através de uma API REST
+Acesso ao banco de dados, através de uma API REST
 
 ### Web App (WEB)
 
 Aplicação para submissão de links, votação para priorização, lista de links submetidos e, quando o conteúdo estiver traduzido, link para a tradução.
 
-### Scripts para o transifex (SCRIPTS)
+### Scripts de automatização (SCRIPTS)
 
-Baixar, tratar o html, categorizar, enviar os textos para o Transifex, receber os textos traduzidos (transifex-cli), montar a parte estática com as traduções
+Baixar conteúdo, tratar o html, categorizar, enviar os textos para a plataforma de tradução, receber textos traduzidos, montar páginas de tradução
 
 ## Meta
 
