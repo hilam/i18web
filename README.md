@@ -34,7 +34,11 @@ Licensed by MIT License . See [``LICENSE``](LICENSE) for more details.
 See [``CONTRIBUTING``](CONTRIBUTING.md) for more details.
 
 <!-- Markdown link & img dfn's -->
+<<<<<<< HEAD
 [mindmap-image]: https://github.com/hilam/i18web/blob/main/docs/images/I18Web.png
+=======
+[mindmap-image]: https://github.com/hilam/i18web/docs/images/I18Web.png
+>>>>>>> cdb0bfbfd47e84c5b4d2dfc5f54b1e610e972943
 [python-image]: https://img.shields.io/badge/python-v3.8-blue
 [fastapi-image]: https://img.shields.io/badge/fastapi-0.61.0-green
 [python-url]: https://www.python.org/downloads/release/python-385/
