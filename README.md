@@ -9,6 +9,8 @@ Esteira de tradução de conteúdos de links (artigos, páginas).
 
 Projeto para viabilizar uma esteira de tradução de conteúdos de links (artigos, páginas, blog posts, etc). Num aplicativo web, os links são indicados por usuários, anônimos ou registrados, que votam nos links para indicar prioridades para os tradutores. O usuário registrado pode acompanhar a tradução de suas indicações ou daquelas em que votou. O conteúdo dos links indicados e priorizados são baixados e incluídos na plataforma de tradução, onde são traduzidos e revisados. Os textos traduzidos são carregados para o aplicativo web, que disponibiliza o conteúdo traduzido, e atualiza os links indicados incluindo o endereço do conteúdo traduzido.
 
+[![Esboço do projeto][mindmap-image]][mindmap-image]
+
 ## Arquitetura
 
 ### Repositório de dados e API de acesso (API)
@@ -32,6 +34,7 @@ Licensed by MIT License . See [``LICENSE``](LICENSE) for more details.
 See [``CONTRIBUTING``](CONTRIBUTING.md) for more details.
 
 <!-- Markdown link & img dfn's -->
+[mindmap-image]: https://github.com/hilam/i18web/blob/main/docs/images/I18Web.png
 [python-image]: https://img.shields.io/badge/python-v3.8-blue
 [fastapi-image]: https://img.shields.io/badge/fastapi-0.61.0-green
 [python-url]: https://www.python.org/downloads/release/python-385/
