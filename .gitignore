@@ -9,3 +9,5 @@
 # coverage
 .coverage
 coverage.xml
+# environment config
+.env
