@@ -15,15 +15,21 @@ Projeto para viabilizar uma esteira de tradução de conteúdos de links (artigo
 
 ### Repositório de dados e API de acesso (API)
 
-Acesso ao banco de dados, através de uma API REST
+* Acesso ao banco de dados, através de uma API REST
+
+* Baixar conteúdo, tratar o html, categorizar, enviar os textos para a plataforma de tradução, receber textos traduzidos, montar páginas de tradução
 
 ### Web App (WEB)
 
-Aplicação para submissão de links, votação para priorização, lista de links submetidos e, quando o conteúdo estiver traduzido, link para a tradução.
+* Aplicação para submissão de links, votação para priorização, lista de links submetidos e, quando o conteúdo estiver traduzido, link para a tradução.
 
-### Scripts de automatização (SCRIPTS)
+### Roadmap
 
-Baixar conteúdo, tratar o html, categorizar, enviar os textos para a plataforma de tradução, receber textos traduzidos, montar páginas de tradução
+* Planejamento de releases
+
+Detalhes em [``Roadmap API``](roadmap_api.md) e [``Roadmap WebApp``](roadmap_web.md). 
+
+[![Roadmap do projeto][mindmap-roadmap-image]][mindmap-roadmap-image]
 
 ## Meta
 
@@ -35,6 +41,7 @@ See [``CONTRIBUTING``](CONTRIBUTING.md) for more details.
 
 <!-- Markdown link & img dfn's -->
 [mindmap-image]: https://github.com/hilam/i18web/blob/main/docs/images/I18Web.png
+[mindmap-roadmap-image]: https://github.com/hilam/i18web/blob/main/docs/images/I18Web_roadmap.png
 [python-image]: https://img.shields.io/badge/python-v3.8-blue
 [fastapi-image]: https://img.shields.io/badge/fastapi-0.61.0-green
 [python-url]: https://www.python.org/downloads/release/python-385/
