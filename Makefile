@@ -1,10 +1,13 @@
 SHELL := /bin/bash
-.PHONY: all clean deps dist docs install test help
+.PHONY: all clean deps dist docs upgrade lint test integration help
 
 help:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
-all: clean install test
+all: clean lint test
+
+lint:
+	@poetry run black
 
 test_only:
 	@poetry run pytest -m "not integration" -v --cov-config .coveragerc --cov=i18web -l --tb=short --maxfail=1 tests/
@@ -12,7 +15,10 @@ test_only:
 
 test: test_only
 
-install:
+integration:
+	@poetry run behave
+
+upgrade:
 	@poetry update
 
 build: clean
@@ -22,8 +28,8 @@ deps:
 	@poetry export -f requirements.txt > requirements.txt
 	@poetry export --dev -f requirements.txt > requirements_dev.txt
 
-dist: clean
-	@poetry run python setup.py sdist bdist_wheel
+dist: build
+#	@poetry run python setup.py sdist bdist_wheel
 
 docs:
 	cd docs

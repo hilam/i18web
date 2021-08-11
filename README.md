@@ -42,8 +42,8 @@ See [``CONTRIBUTING``](CONTRIBUTING.md) for more details.
 <!-- Markdown link & img dfn's -->
 [mindmap-image]: https://github.com/hilam/i18web/blob/main/docs/images/I18Web.png
 [mindmap-roadmap-image]: https://github.com/hilam/i18web/blob/main/docs/images/I18Web_roadmap.png
-[python-image]: https://img.shields.io/badge/python-v3.8-blue
-[fastapi-image]: https://img.shields.io/badge/fastapi-0.61.0-green
+[python-image]: https://img.shields.io/badge/python-v3.8+-blue
+[fastapi-image]: https://img.shields.io/badge/fastapi-0.68.0-green
 [python-url]: https://www.python.org/downloads/release/python-385/
 [fastapi-url]: https://fastapi.tiangolo.com/
 [fastsql-url]: https://github.com/mfreeborn/fastapi-sqlalchemy
