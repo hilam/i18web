@@ -1,22 +1,24 @@
 SHELL := /bin/bash
 .PHONY: all clean deps dist docs upgrade lint test integration help
 
+RUN=poetry run
+
 help:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
 all: clean lint test
 
 lint:
-	@poetry run black
+	@${RUN} ruff check .
 
 test_only:
-	@poetry run pytest -m "not integration" -v --cov-config .coveragerc --cov=i18web -l --tb=short --maxfail=1 tests/
-	@poetry run coverage xml
+	@${RUN} pytest -m "not integration" -v --cov-config .coveragerc --cov=i18web -l --tb=short --maxfail=1 tests/
+	@${RUN} coverage xml
 
 test: test_only
 
 integration:
-	@poetry run behave
+	@${RUN} behave
 
 upgrade:
 	@poetry update
@@ -26,14 +28,14 @@ build: clean
 
 deps:
 	@poetry export -f requirements.txt > requirements.txt
-	@poetry export --dev -f requirements.txt > requirements_dev.txt
+	@poetry export --with dev -f requirements.txt > requirements_dev.txt
 
 dist: build
 #	@poetry run python setup.py sdist bdist_wheel
 
 docs:
 	cd docs
-	@poetry run mkdocs build
+	@${RUN} mkdocs build
 	cd ..
 
 clean:
@@ -42,6 +44,7 @@ clean:
 	@find ./ -name '*~' -exec rm -f {} \;
 	rm -rf .cache
 	rm -rf .pytest_cache
+	rm -rf .ruff_cache
 	rm -rf docs/build
 	rm -rf dist
 	rm -rf *.egg-info
